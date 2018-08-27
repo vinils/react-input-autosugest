@@ -11,6 +11,7 @@ const InputCons = props => {
           size={props.size} 
           onChange={props.onChange}
           onKeyDown={props.onKeyDown} 
+          onBlur={props.onBlur}
           value={props.value}/>
     ); 
 };
@@ -30,12 +31,12 @@ class InputAutoSugest extends Component {
         }
 
         String.prototype.bold = function (bold) {
-            const indexOfSearch = this.indexOf(bold);
+            const indexOfSearch = this.toLowerCase().indexOf(bold.toLowerCase());
 
             if( indexOfSearch >= 0 ){
                 return (
                     <div>
-                        {this.substr(0, indexOfSearch)}<b>{bold}</b>{this.substr(indexOfSearch+bold.length)}
+                        {this.substr(0, indexOfSearch)}<b>{this.substr(indexOfSearch, bold.length)}</b>{this.substr(indexOfSearch+bold.length)}
                     </div>
                 );
             } else {
@@ -77,9 +78,9 @@ class InputAutoSugest extends Component {
         const hasAnySearch = search;
         const hasSpecialDisplayTreatment = this.props.display;
 
-        if(hasSpecialDisplayTreatment){
+        if(hasSpecialDisplayTreatment) {
             const displayItem = this.props.display(item);
-            const isStringType = typeof displayItem == 'String';
+            const isStringType = typeof displayItem === 'string';
 
             if(hasAnySearch && isStringType){
                 return displayItem.bold(search)
@@ -112,6 +113,9 @@ class InputAutoSugest extends Component {
                 if(activedIndex != -1)
                     this.handleSelect(activedIndex);
                 break;
+            case 'Escape':
+                this.setState({filteredData: []})
+                break;
             default:
                 if(activedIndex != -1)
                     this.setState({activedIndex: -1})
@@ -125,13 +129,17 @@ class InputAutoSugest extends Component {
 
         if(search) {
             filteredData = this.state.data.where((item)=>{
-                return filter ? filter(item) : item.indexOf(search)>=0}
+                return filter ? filter(item) : item.toLowerCase().indexOf(search.toLowerCase())>=0}
             );
         }
 
         this.setState({filteredData: filteredData});
 
         onChange(e);
+    }
+
+    handleOnBlur = () => {
+        this.setState({filteredData: []})
     }
 
     render() {
@@ -145,7 +153,8 @@ class InputAutoSugest extends Component {
                   value={value} 
                   size={size}
                   onChange={this.handleInputOnChange} 
-                  onKeyDown={this.handleOnKeyDown}/>
+                  onKeyDown={this.handleOnKeyDown}
+                  onBlur={this.handleOnBlur}/>
                   
                 <Sugestions
                   onClick={this.handleSelect}
