@@ -139,9 +139,8 @@ class InputAutoSugest extends Component {
         onChange(e);
     }
 
-    handleOnBlur = () => {
+    handleOnBlur = () => 
         this.setState({filteredData: []})
-    }
 
     render() {
         const {activedIndex, filteredData} = this.state;

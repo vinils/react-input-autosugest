@@ -27,7 +27,7 @@ const LiCons = props => {
           style={ props.actived ? {..._style, ...style.active, ..._style.active} : props.hovered ? {..._style, ...style.hover, ..._style._hover} : _style }
           onMouseEnter={props.onMouseEnter}
           onMouseLeave={props.onMouseLeave}
-          onClick={props.onClick}>
+          onMouseDown={props.onClick}>
             {props.children}
         </li>
     ); 
