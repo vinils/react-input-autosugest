@@ -12,7 +12,8 @@ const InputCons = props => {
           onChange={props.onChange}
           onKeyDown={props.onKeyDown} 
           onBlur={props.onBlur}
-          value={props.value}/>
+          value={props.value}
+          autoComplete='off'/>
     ); 
 };
 
