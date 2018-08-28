@@ -12,6 +12,7 @@ const InputCons = props => {
           onChange={props.onChange}
           onKeyDown={props.onKeyDown} 
           onBlur={props.onBlur}
+          onFocus={props.onFocus}
           value={props.value}
           autoComplete='off'/>
     ); 
@@ -139,12 +140,16 @@ class InputAutoSugest extends Component {
         onChange(e);
     }
 
-    handleOnBlur = () => 
+    handleOnBlur = () => {
         this.setState({filteredData: []})
+        if(this.props.onBlur){
+            this.props.onBlur()
+        }
+    }
 
     render() {
         const {activedIndex, filteredData} = this.state;
-        const {name, placeholder, value, size} = this.props;
+        const {name, placeholder, value, size, onFocus} = this.props;
         return (
             <React.Fragment>
                 <InputCons 
@@ -154,7 +159,8 @@ class InputAutoSugest extends Component {
                   size={size}
                   onChange={this.handleInputOnChange} 
                   onKeyDown={this.handleOnKeyDown}
-                  onBlur={this.handleOnBlur}/>
+                  onBlur={this.handleOnBlur}
+                  onFocus={onFocus}/>
                   
                 <Sugestions
                   onClick={this.handleSelect}
