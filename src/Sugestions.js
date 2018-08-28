@@ -12,7 +12,7 @@ const style = {
     borderTopRightRadius: 0,
     borderTopLeftRadius: 0,
     maxHeight: 'calc(~"100vh - 100px")',
-    maxWidth: '100px',
+    maxWidth: '300px',
     overflowY: 'auto',
     backgroundColor: 'rgba(255,255,255,1)'
 }
