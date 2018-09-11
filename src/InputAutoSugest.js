@@ -5,15 +5,9 @@ import Sugestions from './Sugestions'
 const InputCons = props => {
     return (
         <input 
+          {...props}
+          ref={(input) => props.inputRef(input)}
           type="text" 
-          name={props.name}
-          placeholder={props.placeholder}
-          size={props.size} 
-          onChange={props.onChange}
-          onKeyDown={props.onKeyDown} 
-          onBlur={props.onBlur}
-          onFocus={props.onFocus}
-          value={props.value}
           autoComplete='off'/>
     ); 
 };
@@ -147,20 +141,20 @@ class InputAutoSugest extends Component {
         }
     }
 
+    focus() {
+        this.inputRef.focus()
+    }
+
     render() {
         const {activedIndex, filteredData} = this.state;
-        const {name, placeholder, value, size, onFocus} = this.props;
         return (
             <React.Fragment>
                 <InputCons 
-                  name={name} 
-                  placeholder={placeholder}
-                  value={value} 
-                  size={size}
+                  {...this.props}
+                  inputRef={(inputRef) => this.inputRef = inputRef}
                   onChange={this.handleInputOnChange} 
                   onKeyDown={this.handleOnKeyDown}
-                  onBlur={this.handleOnBlur}
-                  onFocus={onFocus}/>
+                  onBlur={this.handleOnBlur}/>
                   
                 <Sugestions
                   onClick={this.handleSelect}
