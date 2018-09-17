@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Sugestion from './Sugestion'
 
 const style = {
-    position: 'fixed',
+    position: 'absolute',
     listStyleType: 'none',
     margin: 0,
     padding: 0,
