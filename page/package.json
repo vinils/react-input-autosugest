@@ -1,0 +1,41 @@
+{
+  "name": "react-input-autosugest-page",
+  "version": "0.1.0",
+  "description": "Sample page of react-input-autosugest",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vinils/react-input-autosugest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vinils/react-input-autosugest/issues"
+  },
+  "homepage": "https://vinils.github.io/react-input-autosugest/",
+  "author": {
+    "name": "vinils",
+    "email": "vini_ls@hotmail.com"
+  },
+  "keywords": [
+    "autocomplete",
+    "autocomplete-search",
+    "react",
+    "react-autocomplete",
+    "search-box"
+  ],
+  "dependencies": {
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-input-autosugest": "0.0.1-rc.2",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.0"
+  }
+}
