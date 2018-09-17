@@ -1,7 +1,7 @@
 # React Input Autocomplete/Autosuggest
 Autosuggestion input field for React
 
-[![react-input-autosugest](https://github.com/vinils/react-input-autosugest/raw/master/public/sample.gif)](https://github.com/vinils/react-input-autosugest)
+[![react-input-autosugest](https://github.com/vinils/react-input-autosugest/blob/releaseCandidate/public/sample.gif)](https://github.com/vinils/react-input-autosugest)
 
 # Demo
 Demo and playground are available [here](https://github.io.com/vinils/react-input-autosugest)
