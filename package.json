@@ -3,6 +3,14 @@
   "version": "0.0.1-rc.2",
   "description": "An atuo sugestion search box",
   "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vinils/react-input-autosugest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vinils/react-input-autosugest/issues"
+  },
+  "homepage": "https://github.com/vinils/react-input-autosugest",
   "peerDependencies": {
     "react": "^16.4.2"
   },
@@ -20,10 +28,6 @@
     "email": "vini_ls@hotmail.com"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vinils/react-input-autosugest/issues"
-  },
-  "homepage": "https://github.com/vinils/react-input-autosugest",
   "keywords": [
     "autocomplete",
     "autocomplete-search",
