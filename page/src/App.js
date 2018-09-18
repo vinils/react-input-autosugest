@@ -32,14 +32,17 @@ class App extends Component {
         <br/>
         <br/>
         <br/>
-        Country:
-        <br/>
-        <InputAutoSugest
-          size="20"
-          name="country"
-          value={this.state.country}
-          onChange={this.handleChange}
-          data={countries}/>
+        <center>
+          Country:
+          <br/>
+          <InputAutoSugest
+            style={{maxWidth: '165px'}}
+            size="20"
+            name="country"
+            value={this.state.country}
+            onChange={this.handleChange}
+            data={countries}/>
+        </center>
       </div>
     );
   }

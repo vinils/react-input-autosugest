@@ -157,6 +157,7 @@ class InputAutoSugest extends Component {
                   onBlur={this.handleOnBlur}/>
                   
                 <Sugestions
+                  style={this.props.style}
                   onClick={this.handleSelect}
                   activedIndex={activedIndex}>
                     {filteredData}

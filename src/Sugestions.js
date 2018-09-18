@@ -14,13 +14,20 @@ const style = {
     maxHeight: 'calc(~"100vh - 100px")',
     maxWidth: '300px',
     overflowY: 'auto',
-    backgroundColor: 'rgba(255,255,255,1)'
+    backgroundColor: 'rgba(255,255,255,1)',
+    textAlign: 'left',
+    // bug when position absolute and under center tag, center is ignored
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    left: 0,
+    right: 0,
+    // end bug position
 }
 
 const UlCons = props => {
     return (
         <ul 
-          style={style}>
+          style={{...style, ...props.style}}>
             {props.children}
         </ul>
     ); 
@@ -42,10 +49,10 @@ export default class Sugestions extends Component {
     }
 
     render() {
-        const {children, onClick, activedIndex} = this.props
+        const {children, onClick, activedIndex, style} = this.props
         
         return (
-            <UlCons>
+            <UlCons style={style}>
                 {this.castToSugestionItems(children, activedIndex, onClick)}
             </UlCons>
         );
