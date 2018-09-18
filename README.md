@@ -3,7 +3,7 @@ Autosuggestion input field for React
 
 [![react-input-autosugest](https://github.com/vinils/react-input-autosugest/blob/releaseCandidate/public/sample.gif)](https://github.com/vinils/react-input-autosugest)
 
-# Demo
+## Demo
 Demo and playground are available [here](https://vinils.github.io/react-input-autosugest)
 
 ## Install
@@ -16,7 +16,7 @@ Demo and playground are available [here](https://vinils.github.io/react-input-au
 npm install react-input-autosugest
 ```
 
-# Usage Example
+## Usage Example
 ```JavaScript
 import InputAutoSugest from 'react-input-autosugest';
 
