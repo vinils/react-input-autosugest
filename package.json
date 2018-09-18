@@ -1,6 +1,6 @@
 {
   "name": "react-input-autosugest",
-  "version": "0.0.1-rc.2",
+  "version": "0.0.1-rc.3",
   "description": "An atuo sugestion search box",
   "main": "build/index.js",
   "repository": {
