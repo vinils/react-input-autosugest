@@ -18,12 +18,7 @@ class InputAutoSugest extends Component {
         this.state = {
           activedIndex: -1,
           filteredData : [],
-          data: props.data.map((item) => {
-            return {
-                getSugestion: () => this.display(item, this.props.value),
-                originalData: item
-            }})
-          
+          data: this.getData(props.data)
         }
 
         String.prototype.bold = function (bold) {
@@ -51,6 +46,23 @@ class InputAutoSugest extends Component {
     
             return ret;
         }
+    }
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps.data) {
+            let data = this.getData(nextProps.data)
+            if(nextProps.data != data) {
+                this.setState({data: data})
+            }
+        }
+    }
+    
+    getData(propData) {
+        return propData.map((item) => {
+            return {
+                getSugestion: () => this.display(item, this.props.value),
+                originalData: item
+        }})
     }
 
     handleSelect = (idx) => {
